@@ -1,0 +1,6 @@
+insert into periodo (id, semana, minima, maxima, umidade, descricao) values (null,'Segunda', 10, 20, 2.5, 'Ótimo dia para ficar em casa')
+insert into periodo (id, semana, minima, maxima, umidade, descricao) values (null,'Terça', 5, 11, 0.5, 'Vento forte o dia todo')
+insert into periodo (id, semana, minima, maxima, umidade, descricao) values (null,'Quarta', 16, 22, 1.4, 'Hoje teremos sol a tarde')
+insert into periodo (id, semana, minima, maxima, umidade, descricao) values (null,'Quinta', 18, 19, 0.9, 'Pancadas de chuva no período da manhã')
+insert into periodo (id, semana, minima, maxima, umidade, descricao) values (null,'Sexta', 6, 8, 0.3, 'Esfriou novamente se for sair se agasalhe bem')
+insert into periodo (id, semana, minima, maxima, umidade, descricao) values (null,'Sábado', 22, 30, 0.3, 'Hoje teremos sol o dia todo!')
