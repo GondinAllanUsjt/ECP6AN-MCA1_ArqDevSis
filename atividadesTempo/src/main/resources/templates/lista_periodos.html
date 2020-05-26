@@ -22,6 +22,9 @@
                 <th>Temperatura Máxima</th>
                 <th>Umidade do ar</th>
                 <th>Descrição</th>
+                <th>Data</th>
+                <th>Lat</th>
+                <th>Long</th>
             </tr>
             </thead>
             <tbody>
@@ -31,6 +34,9 @@
                 <td th:text="${periodo.maxima + '°C'}"></td>
                 <td th:text="${periodo.umidade}"></td>
                 <td th:text="${periodo.descricao}"></td>
+                <td th:text="${periodo.data}"></td>
+                <td th:text="${periodo.latitude}"></td>
+                <td th:text="${periodo.longitude}"></td>
             </tr>
             </tbody>
         </table>

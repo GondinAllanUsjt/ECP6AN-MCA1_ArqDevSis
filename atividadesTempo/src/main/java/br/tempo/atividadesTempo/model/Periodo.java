@@ -25,5 +25,9 @@ public class Periodo implements Serializable {
 	private int maxima;
 	private double umidade;
 	private String descricao;
+	private String data;
+	private float latitude;
+	private float longitude;
+	
 	//private String nomeDiaDaSemana;
 }
