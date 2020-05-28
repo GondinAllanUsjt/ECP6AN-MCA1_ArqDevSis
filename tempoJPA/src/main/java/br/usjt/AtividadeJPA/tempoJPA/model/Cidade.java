@@ -16,9 +16,11 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "tb_cidade")
-@Data @AllArgsConstructor @NoArgsConstructor
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Cidade {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -26,6 +28,6 @@ public class Cidade {
 	private double latitude;
 	private double longitude;
 
-	@OneToMany (mappedBy = "cidade", cascade = CascadeType.ALL)
-	private List <Clima> clima;
+	@OneToMany(mappedBy = "cidade", cascade = CascadeType.ALL)
+	private List<Clima> clima;
 }
