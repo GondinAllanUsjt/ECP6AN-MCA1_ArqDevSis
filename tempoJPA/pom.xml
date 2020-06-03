@@ -9,11 +9,11 @@
 		<version>2.2.7.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.usjt</groupId>
-	<artifactId>SpringBootLab</artifactId>
+	<groupId>br.usjt.AtividadeJPA</groupId>
+	<artifactId>tempoJPA</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SpringBootLab</name>
-	<description>SpringBootLab</description>
+	<name>tempoJPA</name>
+	<description>tempoJPA</description>
 
 	<properties>
 		<java.version>1.8</java.version>

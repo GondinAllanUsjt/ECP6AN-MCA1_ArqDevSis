@@ -3,6 +3,7 @@ package br.usjt.AtividadeJPA.tempoJPA.model;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,9 +24,13 @@ public class Cidade {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(nullable = true, length = 10)
 	private Long id;
+	@Column(nullable = true, length = 100)
 	private String nome;
+	@Column(nullable = true, length = 100)
 	private double latitude;
+	@Column(nullable = true, length = 100)
 	private double longitude;
 
 	@OneToMany(mappedBy = "cidade", cascade = CascadeType.ALL)

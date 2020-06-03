@@ -12,7 +12,7 @@ public class TesteInsereUmUsuario {
 		EntityManager manager = JPAUtil.getEntityManager();
 		EntityTransaction transaction = manager.getTransaction();
 		transaction.begin();// inicio
-		Usuario u = new Usuario(null, "Allan", "1234567");
+		Usuario u = new Usuario(null, "admin", "admin");
 		manager.persist(u);
 		transaction.commit();// manda
 		manager.close();// fecha

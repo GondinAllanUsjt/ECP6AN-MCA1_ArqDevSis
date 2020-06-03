@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -26,6 +27,7 @@ public class Semana implements Serializable {
 	@Id
 	@GeneratedValue
 	private Long id;
+	@Column(nullable = false, length = 100)
 	private String semana;
 
 	@OneToMany (mappedBy = "semana", cascade = CascadeType.ALL)
