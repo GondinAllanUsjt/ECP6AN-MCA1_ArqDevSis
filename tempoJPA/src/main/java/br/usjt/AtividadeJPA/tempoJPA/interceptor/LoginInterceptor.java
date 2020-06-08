@@ -8,7 +8,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 public class LoginInterceptor extends HandlerInterceptorAdapter {
 	
-	@Override
+	/*@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)throws Exception {
 //pega a sessão
 		HttpSession session = request.getSession();
@@ -18,5 +18,5 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 		}
 //se já logou, deixa a requisição passar e chegar no controller
 		return true;
-	}
+	}*/
 }

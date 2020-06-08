@@ -20,15 +20,15 @@ public class SemanaComClima {
 		EntityTransaction transaction = manager.getTransaction();
 		transaction.begin();
 		Semana s = new Semana();
-		s.setSemana("Quarta");
+		s.setSemana("Segunda");
 		manager.persist(s);
 		Cidade ci = new Cidade();
-		ci.setNome("Jandira");
+		ci.setNome("Mauá");
 		ci.setLatitude(-13.3723);
 		ci.setLongitude(-36.3304);
 		manager.persist(ci);
-		Clima c = new Clima(null, 10, 20, 0.98, "Vai chover",
-				new java.sql.Date(format.parse("17/06/2020").getTime()), s, ci);
+		Clima c = new Clima(null, 12, 16, 0.4, "Funcionou",
+				new java.sql.Date(format.parse("05/06/2020").getTime()), s, ci);
 		manager.persist(c);
 		transaction.commit();
 		manager.close();

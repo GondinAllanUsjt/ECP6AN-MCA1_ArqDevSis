@@ -7,6 +7,5 @@ import br.usjt.AtividadeJPA.tempoJPA.model.Clima;
 public interface ClimaTempoRepository extends JpaRepository<Clima, Long>{
 
 	
-	
 }
 

@@ -11,15 +11,23 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "tb_cidade")
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonIdentityInfo(
+		  generator = ObjectIdGenerators.PropertyGenerator.class, 
+		  property = "id")
 public class Cidade {
 
 	@Id
@@ -35,4 +43,9 @@ public class Cidade {
 
 	@OneToMany(mappedBy = "cidade", cascade = CascadeType.ALL)
 	private List<Clima> clima;
+	
+	@Override
+	public String toString() {
+		return "[id: " + id +"Nome: " + nome +"Latitude: " + latitude +"Longitude: " +longitude;
+	}
 }

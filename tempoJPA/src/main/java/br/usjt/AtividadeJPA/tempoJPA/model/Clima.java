@@ -12,15 +12,23 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "tb_clima")
-@Data
+@Getter @Setter
 @AllArgsConstructor
 @NoArgsConstructor // faz praticamente tudo get set e bla bla bla
+@JsonIdentityInfo(
+		  generator = ObjectIdGenerators.PropertyGenerator.class, 
+		  property = "id")
 public class Clima {
 
 	@Id
@@ -43,9 +51,18 @@ public class Clima {
 	private Date data;
 
 	@ManyToOne(cascade = CascadeType.ALL)
+	@JsonBackReference
 	private Semana semana;
 
 	@ManyToOne(cascade = CascadeType.ALL)
 	private Cidade cidade;
 
+	@Override
+	public String toString() {
+		return "Clima [id=" + id + ", minima=" + minima + ", maxima=" + maxima + ", umidade=" + umidade + ", descricao="
+				+ descricao + ", data=" + data + "]";
+	}
+
+	
+	
 }
