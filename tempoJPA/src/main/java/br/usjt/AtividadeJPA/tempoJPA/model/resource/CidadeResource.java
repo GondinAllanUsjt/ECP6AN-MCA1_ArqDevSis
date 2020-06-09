@@ -48,4 +48,9 @@ public class CidadeResource {
 	public Cidade buscarPelaLatitudeLongitude(@PathVariable(value="latitude") String latitude, @PathVariable(value="longitude")String longitude) {
 		return cidadeRepo.findByLatitudeAndLongitude(Double.parseDouble(latitude), Double.parseDouble(longitude));
 	}
+	
+	@GetMapping("/{nome}")
+	public List findByLetterName(@PathVariable(value="nome") String nome){
+		return cidadeRepo.findByNomeStartingWith(nome);
+	}
 }
