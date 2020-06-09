@@ -6,4 +6,5 @@ import br.usjt.AtividadeJPA.tempoJPA.model.Cidade;
 
 public interface CidadeRepository extends JpaRepository <Cidade, Long>{
 	
+	Cidade findByLatitudeAndLongitude(double latitude, double longitude);
 }

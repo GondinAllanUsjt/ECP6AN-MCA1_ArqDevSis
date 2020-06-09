@@ -26,13 +26,13 @@ public class CidadeResource {
 
 	@Autowired
 	private CidadeRepository cidadeRepo;
-	
+
 	@GetMapping("/lista")
 	@JsonIgnoreProperties
 	public List<Cidade> todasAsCidades() {
 		return cidadeRepo.findAll();
 	}
-	
+
 	@PostMapping("/salvar")
 	// @ResponseStatus (HttpStatus.CREATED)
 	public ResponseEntity<Cidade> salvar(@RequestBody Cidade cidade, HttpServletResponse response) {
@@ -41,8 +41,11 @@ public class CidadeResource {
 				.toUri();
 
 		// response.setHeader("Location", uri.toASCIIString());
-		return ResponseEntity.created(uri).body(c); 
+		return ResponseEntity.created(uri).body(c);
 	}
-	
-	
+
+	@GetMapping("/{latitude}" + "/{longitude}")
+	public Cidade buscarPelaLatitudeLongitude(@PathVariable(value="latitude") String latitude, @PathVariable(value="longitude")String longitude) {
+		return cidadeRepo.findByLatitudeAndLongitude(Double.parseDouble(latitude), Double.parseDouble(longitude));
+	}
 }

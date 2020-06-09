@@ -14,6 +14,7 @@ import javax.persistence.TemporalType;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import lombok.AllArgsConstructor;
@@ -51,7 +52,6 @@ public class Clima {
 	private Date data;
 
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JsonBackReference
 	private Semana semana;
 
 	@ManyToOne(cascade = CascadeType.ALL)

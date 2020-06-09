@@ -1,4 +1,4 @@
-package br.usjt.AtividadeJPA.tempoJPA.model;
+	package br.usjt.AtividadeJPA.tempoJPA.model;
 
 import java.io.Serializable;
 import java.util.List;
@@ -42,7 +42,6 @@ public class Semana implements Serializable {
 	}
 
 	@OneToMany(mappedBy = "semana", cascade = CascadeType.ALL)
-	@JsonManagedReference
 	private List<Clima> clima;
 
 	
